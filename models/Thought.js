@@ -30,7 +30,6 @@ const ThoughtSchema = new Schema (
         thoughtText: {
             type: String,
             required: true,
-            trim: true,
             minlength: 1,
             maxlength: 280,
         },
@@ -42,7 +41,6 @@ const ThoughtSchema = new Schema (
         username: {
             type: String,
             require: true,
-            trim: true
         },
         reactions: [ReactionSchema]
     },
