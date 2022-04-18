@@ -18,7 +18,7 @@ const thoughtController = {
         params
     }, res) {
         Thought.findOne({
-                _id: params.id
+                _id: params.thoughtId
             })
             .then(dbThoughtData => {
                 if (!dbThoughtData) {
@@ -35,7 +35,7 @@ const thoughtController = {
             })
     },
 
-    addThought({
+    createThought({
         params,
         body
     }, res) {
@@ -69,7 +69,7 @@ const thoughtController = {
     removeThought({
         params
     }, res) {
-        Thought.findOneAndUpdate({
+        Thought.findOneAndDelete({
                 _id: params.thoughtId
             })
             .then(deletedThought => {
